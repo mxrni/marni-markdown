@@ -1,48 +1,53 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import Card from '../components/Card.astro';
-
-const posts = await Astro.glob("./md/*.md");
+const { content } = Astro.props;
 ---
 
-<Layout title="marni-markdown">
-	<main>
-		<h1><span class="text-gradient">marni-markdown</span></h1>
-		<p class="instructions">
-			Hier findest du alle Markdown Files in lesbarer Ansicht an einem Ort.
-		</p>
-		<ul role="list" class="link-card-grid">
-            {posts.map(post => {
-				return(
-					<Card
-						href={post.url}
-						title={post.frontmatter.title}
-						body={post.frontmatter.description}
-					/>
-				)
-            })}
-		</ul>
-	</main>
-</Layout>
-
-<style>
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="generator" content={Astro.generator} />
+		<title>{content.title}</title>
+	</head>
+	<body>
+		<main>
+			<slot />
+			<hr>
+			<p>Geschrieben am: {content.date}</p>
+		</main>
+	</body>
+</html>
+<style is:global>
+	:root {
+		--accent: #ff8800;
+		--accent-gradient: linear-gradient(45deg, var(--accent), #b40000 30%, white 60%);
+	}
+	html {
+		font-family: system-ui, sans-serif;
+		background-color: #F6F6F6;
+	}
+	code {
+		font-family: Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono,
+			Bitstream Vera Sans Mono, Courier New, monospace;
+	}
 	main {
 		margin: auto;
 		padding: 1.5rem;
-		max-width: 60ch;
+		max-width: 80ch;
 	}
 	h1 {
 		font-size: 3rem;
 		font-weight: 800;
 		margin: 0;
-	}
-	.text-gradient {
 		background-image: var(--accent-gradient);
 		-webkit-background-clip: text;
 		-webkit-text-fill-color: transparent;
 		background-size: 400%;
 		background-position: 0%;
 	}
+
 	.instructions {
 		line-height: 1.6;
 		margin: 1rem 0;
