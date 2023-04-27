@@ -3,7 +3,7 @@ title: HelloWorld
 layout: ../../layouts/MarkdownLayout.astro
 description: Erstes Markdown File zum Testen
 author: marni
-date: 26.04.2023
+date: "2022-04-25"
 draft: true
 ---
 
@@ -21,8 +21,10 @@ Normaler Text
 *Kursiv*
 
 ```sql
--- SQL Code Example
-SELECT * FROM test;
+
+    -- SQL Code Example
+    SELECT * FROM test WHERE testName = 'test2';
+ 
 ```
 
->Block Quote
+> Block Quote
