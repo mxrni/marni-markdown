@@ -3,7 +3,7 @@ title: HelloWorld
 layout: ../../layouts/MarkdownLayout.astro
 description: Erstes Markdown File zum Testen
 author: marni
-date: "2022-04-25"
+updated: "2022-04-25"
 draft: true
 ---
 

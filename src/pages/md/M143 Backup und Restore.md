@@ -3,7 +3,7 @@ title: M143 Backup und Restore
 layout: ../../layouts/MarkdownLayout.astro
 description: Zusammenfassung der Lernziele der 1. Prüfung
 author: marni
-date: "2022-04-26"
+updated: "2022-04-26"
 draft: false
 ---
 
