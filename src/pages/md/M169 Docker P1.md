@@ -14,7 +14,7 @@ Docker ist eine Open-Source-Plattform, die es Entwicklern ermöglicht, Anwendung
 
 ## Docker vs. VM
 Im Vergleich zu virtuellen Maschinen (VMs) bieten Docker-Container mehr Flexibilität und Skalierbarkeit, da sie keine eigene Kopie des Betriebssystems benötigen. Docker-Container teilen das Betriebssystem des Host-Systems, was die Leistung verbessert und die Verwaltung erleichtert. VMs haben einen eigenen virtuellen Kernenl und Docker Container teilen sich den Physischen Kernel.
-![](dockervm.jpg)
+![](/dockervm.jpg)
 
 ## Vor- & Nachteile
 Zu den Vorteilen von Docker gehören schnelle Bereitstellung, Portabilität, Wartbarkeit, Skalierbarkeit und Sicherheit. Docker ermöglicht es auch, Anwendungen schnell in verschiedenen Umgebungen bereitzustellen, z.B. auf Test-, Staging- und Produktionsumgebungen.
@@ -37,7 +37,7 @@ Im Vergleich zu VMs benötigen Docker-Container weniger Ressourcen, sind schnell
 Docker besteht aus einem Client-Server-Modell, bei dem der Docker-Client mit dem Docker-Daemon kommuniziert. Der Docker-Client ist das primäre Benutzeroberfläche-Tool, während der Docker-Daemon die Container erstellt, startet und verwaltet.
 
 #### Docker Architecture
-![](dockerarchitecture.jpg)
+![](/dockerarchitecture.jpg)
 
 
 ## Daemon
@@ -59,7 +59,7 @@ Docker ist sinnvoll, weil es Entwicklern ermöglicht, Anwendungen schnell und ei
 ## Docker im DevOps
 Docker ist ein wichtiges Werkzeug im DevOps-Bereich, da es die Zusammenarbeit und die schnelle Bereitstellung von Anwendungen ermöglicht. Docker unterstützt auch Automatisierung, Testautomatisierung und Continuous Integration/Continuous Delivery (CI/CD). Es befindet sich im Bereich Deployment.
 
-![](devops.jpg)
+![](/devops.jpg)
 
 ## Docker Community
 Die Docker-Community ist eine Gruppe von Entwicklern und Enthusiasten, die an der Entwicklung und Verbesserung von Docker beteiligt sind. Die Docker-Community trägt zur Entwicklung neuer Funktionen, zur Lösung von Problemen und zur Erstellung von Docker-basierten Projekten bei.
