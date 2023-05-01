@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://marni-markdown.netlify.app/sitemap-index.xml
