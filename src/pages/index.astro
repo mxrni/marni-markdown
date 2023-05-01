@@ -7,8 +7,8 @@ const posts = await Astro.glob("./md/*.md");
 posts.filter((post) => !post.frontmatter.draft);
 
 posts.sort((fileA: any, fileB: any) => {
-  const dateA: any = new Date(fileA.frontmatter.date);
-  const dateB: any = new Date(fileB.frontmatter.date);
+  const dateA: any = new Date(fileA.frontmatter.updated);
+  const dateB: any = new Date(fileB.frontmatter.updated);
   return dateB - dateA;
 });
 ---

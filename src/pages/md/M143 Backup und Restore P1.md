@@ -93,3 +93,5 @@ LTO 9 = 18-45TB
 - Schulung
 - Dokumentation (wer ist für was verantwortlich)
 - Checkliste für Sicherheitsaspekte
+
+![](/images/preview.png)
