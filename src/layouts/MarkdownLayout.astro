@@ -16,7 +16,7 @@ const { title, description, url } = Astro.props;
 		<meta name="generator" content={Astro.generator} />
         <meta name="google-site-verification" content="xu3M-pO5IR2OmzPRkvqdylXLwycwVV8PhpRufRnAcLg" />
         <link rel="sitemap" href="/sitemap-index.xml">
-		<title>{title}</title>
+		<title>marni-markdown</title>
         <!-- Open Graph -->
         <meta property="og:site_name" content="marni-markdown" />
         <meta property="og:title" content={title} />
@@ -40,9 +40,12 @@ const { title, description, url } = Astro.props;
         <meta name="twitter:image" content="/preview.png" />
         <meta name="twitter:image:alt" content={title} />
         <meta name="twitter:domain" content={import.meta.env.SITE} />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-A0D0BrHz/NtgPwIJygsfDT0vMJeX9X9E15EdM6ZrgUvGhO6RwjE6ghpU6ybu+BvTiqDQ2QOz1a3xtTh7VYkA+A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js" integrity="sha512-BmtHnX9c/wg4x4PboHX8Yf5M5J5kiexD5w2LH8yv+0gXJ+lPz4xThZVETBvFrl2Q/rIM1LY3q1Qz5/z1r8r5QA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 	</head>
 	<body>
 		<main>
+            <a href="/" style="text-decoration: none;"><p style="text-align: right; margin-bottom: 0;">Back to Home</p></a>
 			<slot />
 			<hr>
 			<p>Letztes Update: {content.updated}</p>
@@ -54,6 +57,9 @@ const { title, description, url } = Astro.props;
 		--accent: #ff8800;
 		--accent-gradient: linear-gradient(45deg, var(--accent), #b40000 30%, white 60%);
 	}
+    i{
+        font-size: 2.5rem;
+    }
 	html {
 		font-family: system-ui, sans-serif;
 		background-color: #19181b;
