@@ -3,7 +3,7 @@ title: M143 Backup und Restore
 layout: ../../layouts/MarkdownLayout.astro
 description: Zusammenfassung der Lernziele der 1. Prüfung
 author: marni
-updated: "2022-04-26"
+updated: "2022-05-07"
 draft: false
 ---
 
@@ -93,3 +93,13 @@ LTO 9 = 18-45TB
 - Schulung
 - Dokumentation (wer ist für was verantwortlich)
 - Checkliste für Sicherheitsaspekte
+
+## RAID (Redundant Array of Independent Disks)
+- mehrere physische Massenspeicher zu einem logischen Laufwerk, das eine höhere Ausfallsicherheit oder einen größeren Datendurchsatz erlaubt
+![](/raid0.jpg)
+![](/raid1.jpg)
+![](/raid4.jpg)
+![](/raid5.jpg)
+![](/raid6.jpg)
+![](/raid10.jpg)
+![](/raid.jpg)
