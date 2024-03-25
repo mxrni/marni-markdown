@@ -1,0 +1,115 @@
+export const metadata = {
+  title: "M159 Active Directory P2",
+  description: "Zusammenfassung der Lernziele von M159 Active Directory P2",
+  date: "2024-01-02", // correct date unknown
+};
+
+# M159 Active Directory P2
+
+## Active Directory (AD) Begriffe:
+
+- **Domain:**
+  - Definition: Organisationseinheit in AD, repräsentiert eine Sammlung von Objekten, Benutzern, Computern usw.
+- **Forest:**
+
+  - Definition: Eine Sammlung von einem oder mehreren AD-Domänen, die ein gemeinsames Schema, Konfiguration und globalen Katalog teilen, verbunden durch Vertrauensstellungen.
+
+- **Tree:**
+
+  - Definition: Eine hierarchische Anordnung von Domänen in AD, bildet einen zusammenhängenden Namensraum.
+
+- **GC (Global Catalog):**
+
+  - Definition: Ein verteiltes Datenrepository, das eine durchsuchbare, teilweise Repräsentation aller Objekte im Forest enthält.
+
+- **GPO (Group Policy Object):**
+
+  - Definition: Einstellungen, die auf Benutzer- und Computerobjekte in AD angewendet werden, um Konfigurationen und Sicherheitseinstellungen zu definieren.
+
+- **DNS (Domain Name System):**
+
+  - Definition: Übersetzt Domainnamen in IP-Adressen und umgekehrt, entscheidend für die AD-Funktionalität.
+
+- **OU (Organizational Unit):**
+
+  - Definition: Ein Container innerhalb einer Domäne, der zur Organisation und Verwaltung von Objekten für einfachere Administration verwendet wird.
+
+- **AGDLP:**
+
+  - Definition: Ein Akronym für das Sicherheitsmodell "Account, Global, Domain Local, Permissions" - bewährte Praxis zur Vergabe von Berechtigungen in AD.
+
+- **UPN (User Principal Name):**
+
+  - Definition: Der Benutzername und der Domainname eines AD-Benutzerkontos, oft für Anmeldungen verwendet.
+
+- **RODC (Read-Only Domain Controller):**
+  - Definition: Ein Domänencontroller, der eine schreibgeschützte Kopie der AD-Datenbank enthält, nützlich an entfernten Standorten.
+
+## Berechtigungen mit AGDLP Setzen:
+
+- **AGDLP:**
+  - Verwende AGDLP, um Berechtigungen festzulegen:
+    - Weise Berechtigungen gemäß dem AGDLP-Sicherheitsmodell zu.
+    - Befolge die bewährte Praxis, Berechtigungen über verschachtelte Gruppen zuzuweisen.
+
+![](/3lehrjahr/agdlp.png)
+
+## Was kann ich alles mit GPOs:
+
+- **Group Policy Objects (GPOs):**
+  - Setze Konfigurationen und Richtlinien für Benutzer und Computer.
+  - Erzwinge Sicherheitseinstellungen.
+  - Verteile Software.
+  - Kontrolliere Benutzerumgebungen.
+  - Implementiere Skripte und Anmelde-/Abmeldeverhalten.
+
+## GPO --> Links, Verteilung, Forcierung, Versionierung,...
+
+- **GPO-Verwaltung:**
+  - **Links:**
+    - Ordne GPOs AD-Containern zu (Standorte, Domänen, OUs).
+  - **Verteilung:**
+    - GPOs werden automatisch an alle DCs in der Domäne verteilt.
+  - **Forcierung:**
+    - Erzwinge GPO-Einstellungen, auch wenn sie auf einer niedrigeren Ebene überschrieben wurden.
+  - **Versionierung:**
+    - GPOs haben Versionsnummern zur Nachverfolgung von Änderungen.
+
+## Erstellen von GPOs:
+
+- **Erstellen von GPOs:**
+  - Verwende die Gruppenrichtlinienverwaltungskonsole (GPMC).
+  - Navigiere zu "Forest" -> "Domains" -> "Deine Domäne" -> "Gruppenrichtlinienobjekte".
+  - Klicke mit der rechten Maustaste, um ein neues GPO zu erstellen.
+
+## Update und "Debugging von GPOs mit CMD":
+
+- **Update und Debugging von GPOs mit CMD:**
+  - **GPO aktualisieren:**
+    - `gpupdate /force` - Erzwinge eine sofortige Aktualisierung von GPOs.
+  - **Debugging von GPOs:**
+    - `gpresult /r` - Zeige das Ergebnis der angewandten Richtlinien.
+
+## Logische Sicht auf ein AD:
+
+- **Logische Sicht auf ein AD:**
+  - Verstehe OUs, Domänen, Trees und Forests.
+  - Erkenne die logische Organisation von AD-Komponenten.
+
+## Physische Elemente einer Domain:
+
+- **Physische Elemente einer Domäne:**
+  - **DC (Domänencontroller):**
+    - Server, die Benutzer authentifizieren, Sicherheitsrichtlinien durchsetzen und AD-Datenbanken verwalten.
+  - **Standorte:**
+    - Physische Standorte in AD, verbunden durch ein Hochgeschwindigkeitsnetzwerk.
+
+## Vertrauensstellungen:
+
+- **Vertrauensstellungen:**
+  - **Unidirektional:**
+    - Das Vertrauen fließt in eine Richtung.
+  - **Bidirektional:**
+    - Das Vertrauen fließt in beide Richtungen.
+  - **(Nicht) Transitiv:**
+    - Nicht Transitiv: Direkte Verbindungen zwischen bestimmten Domänen, ohne automatische Ausdehnung auf andere.

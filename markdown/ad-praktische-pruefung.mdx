@@ -1,0 +1,88 @@
+export const metadata = {
+  title: "AD praktische Prüfung",
+  description: "Zusammenfassung der Lernziele von der praktischen AD Prüfung",
+  date: "2024-01-03", // correct date unknown
+};
+
+# AD Praktische Prüfung
+
+## Setup
+
+- 2 Windows Server VM
+- 1 Windows Client VM
+
+- optional:
+  - Hostname ändern
+  - Firewall Ping erlauben (File and Printer Sharing (Echo Request))
+
+### VMWare Settings
+
+![](/3lehrjahr/iso.jpg)
+![](/3lehrjahr/network.jpg)
+
+## Domain Controller Setup
+
+- Windows Server VM aufsetzen und starten
+- IP Settings
+  ![](/3lehrjahr/ipwin1.jpg)
+- AD DS Role hinzufügen
+  ![](/3lehrjahr/adds.jpg)
+- Promote to Domain Controller
+  ![](/3lehrjahr/promote.jpg)
+- Add a new forest
+  ![](/3lehrjahr/addforest.jpg)
+- di ganz scheisse durchklicka
+
+## Subdomain einrichten + AD Datenbank Laufwerk D (zweite Disk)
+
+- Windows Server aufsetzen
+- VMWare zweite Disk hinzufügen, eine für OS eine für AD
+- Disk Management öffnen. Zweite Disk initialisieren und Volume erstellen
+- IP Settings
+  ![](/3lehrjahr/ipwin2.jpg)
+- AD DS Role hinzufügen
+  ![](/3lehrjahr/adds.jpg)
+- Bei den Paths andere Disk auswählen
+  ![](/3lehrjahr/paths.jpg)
+- Promote to Domain Controller
+  ![](/3lehrjahr/promote.jpg)
+- Add a new domain to an existing forest
+  ![](/3lehrjahr/domaintoforest.jpg)
+
+## Client integrieren (goofy.net)
+
+- Win11 Client aufsetzen
+- IP Settings
+  ![](/3lehrjahr/ipwin11.jpg)
+- Join Domain
+  ![](/3lehrjahr/joindomain.jpg)
+
+## Share auf Subdomain
+
+- Lokalen Ordner erstellen auf Subdomain Server
+- Computer Management --> SharedFolders --> Shares navigieren
+- Rechtsklick --> New Share --> Pfad auswählen --> Berechtigungen
+  ![](/3lehrjahr/folderpermission.jpg)
+- Share publishen
+  ![](/3lehrjahr/publishshare.jpg)
+
+## AGDLP User von Domain kann auf Share von Subdomain zugreifen
+
+- AD Users and Computers --> User anlegen
+- OU Groups erstellen, Global Group erstellen, User hinzufügen
+  ![](/3lehrjahr/gl.jpg)
+- Auf Subdomain OU erstellen, Domain Local Group erstellen, Global Group von Hauptdomain hinzufügen
+  ![](/3lehrjahr/dl.jpg)
+- Domain Local Group beim Folder hinzufügen
+  ![](/3lehrjahr/adddl.jpg)
+- Im Computer Management Share Permission setzen
+  ![](/3lehrjahr/sharepermissions.jpg)
+
+## GPO erstellen für bspw. Hintergrund
+
+- Group Policy Management --> Default Policy editieren oder neue erstellen und editieren
+  ![](/3lehrjahr/gpomanagement.jpg)
+- GPO setzen
+  ![](/3lehrjahr/gpobg.jpg)
+- Bild angeben:
+  ![](/3lehrjahr/bg.png)

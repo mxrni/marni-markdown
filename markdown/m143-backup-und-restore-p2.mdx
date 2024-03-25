@@ -1,0 +1,118 @@
+export const metadata = {
+  title: "M143 Backup und Restore P2",
+  description: "Zusammenfassung der Lernziele von M143 Backup und Restore P2",
+  date: "2023-02-02", // correct date unknown
+};
+
+# M143 Backup und Restore P2
+
+## Hauptgruppen von Speichermedien
+
+#### Magnetische Speichermedien
+
+- Festplatten, Magnetbänder
+- Vorteile: Hohe Speicherkapazität
+- Nachteile: Schutz vor magnetischen Feldern und hohe Luftfeuchtigkeit, Langsamere Zugriffszeiten im Vergleich zu anderen Medien
+
+#### Optische Speichermedien
+
+- CD-ROMs, DVDs, Blu-ray-Discs
+- Vorteile: Kompakt und Leicht
+- Nachteile: Schutz vor Licht, Kratzer und Beschädigungen, Geringe Speicherkapazität, Langsam
+
+#### Flash-Speicher
+
+- USB-Sticks, SD-Karten, SSD-Festplatten
+- Schutz vor elektrostatischer Entladung (ESD)
+- Vorteile: Schneller Datenzugriff, Unempfindlich gegenüber magnetischen Feldern
+- Nachteile: Höhere Kosten im Vergleich zu magnetischen Medien
+
+#### Generelle Schutzmassnahmen
+
+Schutz vor physikalischen Schäden wie Stössen, Hitze und Feuer, Feuchtigkeit und Wasser
+
+## Was braucht man wenn man in 20 Jahren ein altes Speichermedium auslesen will?
+
+- Spezielle Hardware und Software benötigt
+- Kompatibles Lesegerät oder Adapter
+- Ältere Betriebssystemversion oder virtuelle Maschine erforderlich
+- Spezielle Software für das Dateiformat notwendig
+
+## Differenzielles/Inkrementelles Backup
+
+### Differenzielles Backup
+
+Hierbei werden jeweils nur diejenigen Dateien gesichert, die sich seit dem letzten Vollbackup geändert haben oder die neu hinzugekommen sind.
+
+#### Vorteile
+
+Sie brauchen weniger Speicherplatz als bei ausschliesslicher Vollbackup-Sicherung.
+Für die Wiederherstellung eines Standes benötigen Sie nur ein differentielles Backup und das letzte Vollbackup.
+
+#### Nachteile
+
+Eine einmal geänderte Datei muss bis zum nächsten Vollbackup in jedem differentiellen Backup erneut gesichert werden, auch wenn sie nicht weiter bearbeitet wurde. Dies führt immer noch zu unnötig belegtem Speicherplatz.
+
+### Inkrementelles Backup
+
+Hierbei werden stets nur die Dateien gesichert, die sich seit der letzten Sicherung (inkrementell oder voll) geändert haben oder neu hinzugekommen sind.
+
+#### Vorteile
+
+Da jede Datei nur einmal gesichert wird, ist der Speicherbedarf optimal niedrig.
+
+#### Nachteile
+
+Für einen kompletten Datenbestand brauchen Sie das letzte Vollbackup und alle seither erzeugten inkrementellen Backups. Um eine Datei leicht wieder zu finden, ist also ein gutes Verwaltungstool erforderlich.
+
+![](/2lehrjahr/DiffrenziellInkrementell.png)
+
+## USV - Offline vs. Online
+
+### Unterschiede
+
+#### Offline USV:
+
+- Schaltet sich bei Stromausfall automatisch ein und versorgt angeschlossene Geräte mit Strom aus der Batterie.
+- Bietet begrenzten Schutz gegen Spannungsschwankungen und Kurzzeitunterbrechungen.
+- Zeitspanne für den Übergang zur Batterie ist relativ lang.
+- Günstigere Anschaffungskosten im Vergleich zu Online USVs.
+
+#### Online USV:
+
+- Bietet kontinuierlichen Stromschutz durch ständige Umleitung des Stroms über die Batterie.
+- Sorgt für konstante Stromversorgung und Schutz vor Spannungsschwankungen, Rauschen und Störungen.
+- Nahtloser Übergang zur Batterie ohne Unterbrechung der Stromversorgung.
+- Höhere Anschaffungskosten im Vergleich zu Offline USVs.
+
+#### Was machen USVs alles...
+
+- USVs (Unterbrechungsfreie Stromversorgungen) dienen dazu, Geräte und Systeme vor Stromausfällen, Spannungsschwankungen und anderen Stromproblemen zu schützen.
+- Sie liefern sofortigen oder nahtlosen Übergang zur Batterie, um die Stromversorgung aufrechtzuerhalten.
+- USVs bieten Zeit, um Daten zu speichern, Systeme herunterzufahren oder alternative Stromquellen zu aktivieren.
+- Sie schützen vor Datenverlust, Schäden an Geräten und Systemausfällen.
+
+## Backup-Strategien
+
+### Großvater-Vater-Sohn-Prinzip
+
+- Das Großvater-Vater-Sohn-Prinzip ist eine Backup-Strategie, bei der verschiedene Generationen von Backups aufbewahrt werden.
+- Es werden tägliche, wöchentliche und monatliche Backups erstellt.
+- Die täglichen Backups werden als "Sohn", die wöchentlichen als "Vater" und die monatlichen als "Großvater" bezeichnet.
+- Dadurch wird eine langfristige Datensicherung gewährleistet.
+
+### 3-2-1-Regel
+
+- Die 3-2-1-Regel ist eine Backup-Strategie, die besagt, dass mindestens drei Kopien der Daten erstellt werden sollten.
+- Die Daten sollten auf mindestens zwei verschiedenen Speichermedien gespeichert werden.
+- Eine Kopie sollte an einem externen Speicherort aufbewahrt werden, um vor Katastrophen wie Brand oder Diebstahl zu schützen.
+- Diese Strategie gewährleistet Redundanz und erhöhte Sicherheit der Daten.
+
+### Tower of Hanoi
+
+- Der "Tower of Hanoi" ist ein mathematisches Rätsel, das auch als Backup-Strategie verwendet werden kann.
+- Dabei werden die Backups in einer Hierarchie angeordnet, ähnlich den Scheiben des Turms.
+- Es gibt verschiedene Ebenen von Backups, wobei die oberste Ebene das aktuellste Backup enthält und die unteren Ebenen ältere Backups.
+- Diese Strategie ermöglicht es, gezielte Wiederherstellungen von bestimmten Zeitpunkten auszuführen.
+  <br />
+  Dieses Bild zeigt auf wie man bei der Speicherung vorgeht (wtf) ![](/2lehrjahr/ToHStrategy.png)

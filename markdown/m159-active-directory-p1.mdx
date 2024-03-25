@@ -1,0 +1,108 @@
+export const metadata = {
+  title: "M159 Active Directory P1",
+  description: "Zusammenfassung der Lernziele von M159 Active Directory P1",
+  date: "2024-01-01", // correct date unknown
+};
+
+# M159 Active Directory P1
+
+## DNS-Server-Arten
+
+- **Primary:** Haupt-DNS-Server, der die primäre Autorität für eine Zone hat.
+- **Secondary:** Ein Backup-DNS-Server, der Informationen von einem Primary-Server repliziert.
+- **Forwarder:** Ein DNS-Server, der Anfragen an andere DNS-Server weiterleitet.
+- **Cache:** Speichert bereits aufgelöste DNS-Anfragen zur schnelleren zukünftigen Bereitstellung.
+- **Autoritativ / Nicht Autoritativ:** Autoritative Server haben direkte Informationen über eine Zone, während nicht autoritative Server diese Informationen von anderen Quellen erhalten.
+
+## Aufgabe des DNS-Servers
+
+Der DNS-Server übersetzt menschenlesbare Domainnamen in IP-Adressen und erleichtert so die Kommunikation im Netzwerk (Forward) und IP zu Domainnamen (Reverse)
+
+## Aufbau eines Firmennetzwerks
+
+Ein Firmennetzwerk besteht aus Komponenten wie Servern, Clients, Netzwerkinfrastruktur (Router, Switches), Firewalls und Sicherheitsrichtlinien.
+
+## Integration einer neuen Domäne
+
+Die Integration einer neuen Domäne umfasst die Konfiguration von Domänencontrollern, Zuweisung von IP-Adressen, Einrichtung von DNS und Sicherheitsrichtlinien.
+
+## Directory Information Tree (DIT)
+
+Ein DIT ist eine hierarchische Struktur, die die Organisationseinheiten und Objekte im Verzeichnisdienst darstellt.
+![](/3lehrjahr/DIT.png)
+
+## Distinguished Name (DN) durch DIT
+
+Der DN wird durch den DIT bestimmt und gibt die genaue Position eines Objekts im Verzeichnisbaum an.\
+Beispiel für obrigen DIT:
+
+> DN: cn=Bob Doyle, ou=IT, ou=London, dc=wondertoys, dc=com
+
+## Domänenschema
+
+Das Domänenschema definiert die Objektklassen und Attribute, die in einer Active Directory-Domäne vorhanden sein können.
+![](/3lehrjahr/Domaenenschema.png)
+
+## Funktion und Komponenten von Kerberos
+
+Kerberos ist ein Authentifizierungsprotokoll, das die Sicherheit in Netzwerken gewährleistet. Die wichtigsten Komponenten sind:
+
+- **Key Distribution Center (KDC):** Der KDC ist für die Ausgabe von Tickets und das Schlüsselmanagement verantwortlich, einschließlich TGTs und TGS-Tickets.
+
+- **Authentication-Server:** Der Authentication-Server überprüft die Identität von Benutzern und stellt TGTs aus.
+
+- **Ticket Granting Server (TGS):** Der TGS stellt Tickets aus, die den Zugriff auf bestimmte Dienste innerhalb des Netzwerks ermöglichen.
+
+- **Ticket Granting Ticket (TGT):** Das TGT ist ein Ticket, das vom Authentifizierungsserver ausgestellt wird und den Zugriff auf den Ticket Granting Server autorisiert.
+
+![](/3lehrjahr/Kerberos.png)
+
+1. Der Anwender meldet sich auf dem PC an. Der PC übergibt diese Anmeldedaten an den Domaincontroller, welcher die Anmeldung prüft.
+
+2. Der Client erhält ein TGT. Auch diese Anmeldung ist natürlich mit Zertifikaten gesichert.
+
+3. Nun möchte der Client eine Verbindung zum Server 1 aufbauen. Nutzt er dazu z.B.: einen Webbrowser, dann versucht der Anwender erst einmal eine anonyme Verbindung.
+
+4. Der Webserver wird den Client natürlich mit einem 401-Fehler abweisen und ihn zur Anmeldung auffordern. Dabei erhält der Client auch gleich den Namen der Ressource, für den er ein Ticket vorweisen muss.
+
+5. Der Client geht nun mit diesem Namen an das Kerberos Distribution Center (Quasi den Fahrkartenschalter) und bittet um ein Ticket für die Ressource.
+
+6. Der KDC nun sucht im Active Directory im Feld "ServicePrincipalName" nach der angeforderten Ressource, um das passende Konto zu finden.
+
+7. Das Ticket wird auf den Namen und mit den Daten des Benutzers ausgestellt, digital signiert und an den Client gegeben, welcher das Ticket in seinem Cache übernimmt.
+
+8. Der Client stellt nun die Anfrage erneut an den Server und gibt eben dieses Ticket an den Server mit.
+
+9. Der Server kann nun die Gültigkeit des Tickets überprüfen, ohne direkt in Kontakte mit dem KDC zu treten, da er ja dem KDC "vertraut". Der Benutzer erhält Zugriff.
+
+## Begriffe im Zusammenhang mit dem Active Directory
+
+- **Directory User Agents (DUA):** DUA fungiert als Benutzerschnittstelle zwischen dem Benutzer und dem Verzeichnis. Es übersetzt Benutzeranfragen in die korrekte Systemsprache.
+
+- **Directory System Agents (DSA):** DSA ist für die Verwaltung von Informationen im Verzeichnis verantwortlich. Es sucht und liefert Daten in Antwort auf Anfragen von DUA.
+
+- **(Lightweight) Directory Access Protocol ((L)DAP):** LDAP ist ein Protokoll zur Abfrage und Veränderung von Informationen im Active Directory. Es ermöglicht die Kommunikation zwischen DUA und DSA.
+
+## Protokoll zur AD-Abfrage
+
+LDAP wird verwendet, um Informationen im Active Directory abzufragen und zu ändern.
+
+## Allgemeine Begriffe
+
+- **DIT (Directory Information Tree):** DIT repräsentiert die hierarchische Struktur der Objekte im Verzeichnisdienst.
+
+- **DN (Distinguished Name):** DN ist eine eindeutige Identifikation eines Objekts im Verzeichnisdienst.
+
+- **UPN (User Principal Name):** UPN ist ein Benutzeridentifikationsformat im Active Directory, das normalerweise der E-Mail-Adresse entspricht.
+
+- **Domäne:** Eine Domäne ist eine logische Organisationsstruktur im Active Directory, die Benutzer, Computer und Ressourcen gruppiert.
+
+- **Schema:** Das Schema definiert die Struktur und Attribute von Objekten im Active Directory.
+
+- **LDAP (Lightweight Directory Access Protocol):** LDAP ist ein Protokoll zur Abfrage und Veränderung von Informationen im Verzeichnisdienst.
+
+- **Kerberos:** Kerberos ist ein Authentifizierungsprotokoll im Active Directory.
+
+- **ACL (Access Control List):** ACL definiert die Zugriffsrechte auf Objekte im Verzeichnisdienst.
+
+- **GC (Global Catalog):** Der Global Catalog enthält Informationen über Objekte in der gesamten Gesamtstruktur des Active Directory.
