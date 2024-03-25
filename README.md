@@ -37,3 +37,7 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 5. Open a Pull Request
 
 All the markdown files are stored at `./markdown` and the images under `./public`
+
+## Roadmap
+
+- [ ] Automatically create discussion on github for each markdown
