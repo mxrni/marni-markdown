@@ -1,8 +1,8 @@
-import type { Metadata } from "next";
 import { GeistSans } from "geist/font/sans";
+import type { Metadata } from "next";
 
-import "./globals.css";
 import Header from "@/components/Header";
+import "./globals.css";
 
 export const metadata: Metadata = {
   title: {
@@ -10,6 +10,7 @@ export const metadata: Metadata = {
     default: "marni-markdown: Alle Markdowns an einem Ort",
   },
   description: "Alle Markdown Files an einem Ort.",
+  metadataBase: new URL("https://marni-markdown.vercel.app"),
 };
 
 export default function RootLayout({
