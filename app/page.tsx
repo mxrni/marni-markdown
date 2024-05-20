@@ -1,3 +1,4 @@
+import AktuellBadge from "@/components/AktuellBadge";
 import fs from "fs";
 import Link from "next/link";
 
@@ -16,20 +17,6 @@ async function getMarkdownFiles() {
   );
 
   return mdFiles;
-}
-
-function isNewMd(dateStr: string) {
-  const targetDate = new Date(dateStr);
-  const today = new Date();
-
-  const sevenDaysAgo = new Date();
-  sevenDaysAgo.setDate(today.getDate() - 7);
-
-  if (targetDate >= sevenDaysAgo && targetDate <= today) {
-    return true;
-  }
-
-  return false;
 }
 
 export default async function Home() {
@@ -61,13 +48,7 @@ export default async function Home() {
                 </p>
               </div>
             </div>
-            {isNewMd(mdFile.metadata.date) && (
-              <div>
-                <p className="rounded-full bg-accent/10 px-2.5 whitespace-nowrap py-1 text-xs font-semibold leading-5 text-accent">
-                  Aktuell
-                </p>
-              </div>
-            )}
+            <AktuellBadge mdFile={mdFile} />
           </article>
         </Link>
       ))}
