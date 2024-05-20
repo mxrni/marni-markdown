@@ -41,3 +41,4 @@ All the markdown files are stored at `./markdown` and the images under `./public
 ## Roadmap
 
 - [ ] Automatically create discussion on github for each markdown
+- [ ] Headings in Sitebar
