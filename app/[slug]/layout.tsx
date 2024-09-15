@@ -19,6 +19,7 @@ export default function RootLayout({
         prose-base:text-primary 
         prose-img:rounded-lg 
         prose-inline-code
+        prose-h3:text-zinc-300
         "
       >
         {children}
