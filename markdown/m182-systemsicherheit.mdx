@@ -1,0 +1,155 @@
+export const metadata = {
+  title: "M182 Systemsicherheit P1",
+  description: "Zusammenfassung der Lernziele von M182 Systemsicherheit P1",
+  date: "2025-03-10",
+  commentSection: true,
+};
+
+# M182 Systemsicherheit P1
+
+## Informationssicherheit vs. Systemsicherheit
+
+### Informationssicherheit
+
+- Schutz von **Daten und Informationen**
+- Schutzziele:
+  - **Vertraulichkeit** (z. B. Verschlüsselung)
+  - **Integrität** (z. B. Hashing)
+  - **Verfügbarkeit** (z. B. Backups)
+- Unabhängig von Systemen (auch physisch/mündlich)
+
+### Systemsicherheit
+
+- Schutz von **IT-Systemen und Infrastruktur**
+- Bereiche:
+  - **Netzwerksicherheit** (z. B. Firewalls)
+  - **Betriebssystemsicherheit** (z. B. Updates)
+  - **Softwaresicherheit** (z. B. Exploit-Schutz)
+  - **Physische Sicherheit** (z. B. Zugangskontrollen)
+
+### Unterschied
+
+- **Informationssicherheit** → Schutz der Daten
+- **Systemsicherheit** → Schutz der Systeme
+
+## Begriff Systemsicherheit einordnen
+
+![Systemsicherheit](/4lehrjahr/systemsicherheit.png)
+
+## Schutzziele der Informationssicherheit
+
+### 1. Integrität (Unverfälschtheit)
+
+- Daten und Systeme bleiben **unverändert** und **korrekt**
+- Schutz vor Manipulationen und ungewollten Änderungen
+- Massnahmen:
+  - Hashing (z. B. SHA-256)
+  - Digitale Signaturen
+  - Zugriffskontrollen
+
+### 2. Vertraulichkeit (Geheimhaltung)
+
+- **Nur autorisierte Personen** dürfen auf Informationen zugreifen
+- Schutz vor unbefugtem Zugriff oder Datenlecks
+- Massnahmen:
+  - Verschlüsselung (z. B. AES, TLS)
+  - Zugriffskontrollen (z. B. Rollen & Berechtigungen)
+  - Sichere Authentifizierung (z. B. 2FA)
+
+### 3. Verfügbarkeit (Zugänglichkeit)
+
+- Daten und Systeme sind **jederzeit nutzbar** und **erreichbar**
+- Schutz vor Ausfällen oder Angriffen (z. B. DDoS)
+- Massnahmen:
+  - Backups & Redundanz
+  - Hochverfügbarkeit (z. B. Load Balancer)
+  - Notfallpläne & Monitoring
+
+## Gefahren einordnen
+
+![](/4lehrjahr/gefahren.png)
+
+## Massnahmen gegen Gefahren
+
+![](/4lehrjahr/massnahmen.png)
+
+## Begriffe
+
+### IDS (Intrusion Detection System)
+
+- System zur Erkennung von Angriffen und verdächtigem Verhalten
+- Unterscheidung:
+  - NIDS (Network IDS) → Überwachung des Netzwerkverkehrs
+  - HIDS (Host IDS) → Überwachung einzelner Geräte
+
+### MELANI (Schweiz)
+
+- Melde- und Analysestelle Informationssicherung
+- Schweizer Behörde für Cybersicherheit und Bedrohungsanalyse
+- Unterstützt Unternehmen und Behörden bei IT-Sicherheitsvorfällen
+
+### IBS (Deutschland)
+
+- Institut für Sicherheitssysteme
+- Forschung und Entwicklung im Bereich IT- und Systemsicherheit
+
+### MBSA (Microsoft Baseline Security Analyzer)
+
+- Tool von Microsoft zur Sicherheitsbewertung von Windows-Systemen
+- Erkennt unsichere Konfigurationen und fehlende Updates
+- Eingestellt und durch Microsoft Defender ersetzt
+
+> ko ahnig was no dra ko könnte. das hommer mol bim vogler ka, passt glob o zum thema:
+
+## Datenschutz
+
+Bezieht sich auf den gesetzlichen Schutz personenbezogener Daten, indem sie vor unerlaubter Verarbeitung oder Verwendung geschützt werden.
+
+## Datensicherheit
+
+Bezieht sich auf die Massnahmen, die ergriffen werden, um die Verfügbarkeit, Integrität und Vertraulichkeit von Daten sicherzustellen.
+
+#### Die 3 Grundwerte der Datensicherheit:
+
+- **Integrität**, ungewünschte, nicht nachvollziehbare Änderungen unmöglich gemacht.
+- **Vertraulichkeit**, nur befugte Personen haben Zugang zu den entsprechenden Daten.
+- **Verügbarkeit**, Nutzer kommen an die Daten ran, wenn sie benötigt werden.
+
+## Kategorien von Bedrohungen
+
+#### Höhere Gewalt:
+
+- Defekte der Hardware, Stromversorgung
+- Fehler im Betriebs- oder Kommunikationssystem
+- Feuer, Explosion im Rechenzentrum oder in dessen Umgebung
+- Naturkatastrophen wie Erdbeben, Überschwemmungen oder Blitzschlag
+
+#### Menschliches Versagen:
+
+- Versehentliches Löschen von Daten
+- Fehlerhaftes Programmieren
+- Verlust der Vertraulichkeit durch herumliegende Daten
+
+#### Kriminelle Handlung:
+
+- Absichtliche Manipulation an Geräten, Programmen oder Daten
+- Missbrauch vertraulicher Daten
+- Diebstahl oder Kidnapping von Geräten, Programmen oder Daten
+- Einbringen von bösartiger Software (Viren), Hacking, Industriespionage
+- Vandalismus, Sabotage
+
+## Wie schütze ich mich dagegen?
+
+#### Preloss:
+
+- Virenscan und Malware-Schutz
+- Firewall und Intrusion Detection Systems (IDS)
+- Verschlüsselung von Daten
+
+#### Postloss:
+
+- Regelmässige Backups und Offsite-Speicherung
+- Disaster Recovery Plan (DRP)
+- Forensische Analyse und Log-Überwachung
+
+> i hoff ofach das bald juli isch
