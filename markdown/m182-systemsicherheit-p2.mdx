@@ -1,0 +1,214 @@
+export const metadata = {
+  title: "M182 Systemsicherheit P2",
+  description: "Zusammenfassung der Lernziele von M182 Systemsicherheit P2",
+  date: "2025-04-27",
+  commentSection: true,
+};
+
+# M182 Systemsicherheit P2
+
+> es sind ofach dia repetitionsfroga vo s.71-90 & s.111-117
+
+---
+
+## 20. Schadensszenarien (mind. 5)
+
+1. **Datenverlust** durch Hardwareausfall oder versehentliches Löschen
+2. **Datenkorruption** aufgrund von Softwarefehlern oder Malware
+3. **Sabotage** - gezielte Zerstörung oder Manipulation von Systemen
+4. **Spionage** - unbefugte Einsicht in vertrauliche Daten
+5. **Denial of Service (DoS/DDoS)** - Verfügbarkeitseinschränkung durch Überlastung
+6. **Insider-Angriffe** durch Mitarbeitende mit besonderen Rechten
+7. **Ransomware-Angriffe** - Verschlüsselung von Daten gegen Lösegeld
+
+---
+
+## 21. drei Möglichkeiten zur Erkennung von System-Anomalien
+
+1. **Signatur-basierte Erkennung** (bekannte Muster/Viren)
+2. **Verhaltensbasierte Erkennung** (Abweichungen vom Normalbetrieb)
+3. **Statistische Anomalieerkennung** (Schwellenwert-Analysen)
+4. **Heuristische Verfahren** (Regelbasierte Analysen)
+
+---
+
+## 22. Sicherheitsanforderungen - je 3 externe und interne Kategorien
+
+- **Externe Kategorien**
+
+1. **Rechtliche Anforderungen** (z. B. GDPR, ISO/IEC 27001)
+2. **Vertragliche Anforderungen** (SLAs, NDAs)
+3. **Marktanforderungen** (Zertifizierungen, Audits)
+
+- **Interne Kategorien**
+
+1. **Organisatorische Anforderungen** (Rollen & Verantwortlichkeiten)
+2. **Technische Anforderungen** (Zugriffskontrollen, Verschlüsselung)
+3. **Betriebliche Anforderungen** (Backup-, Patch- und Incident-Management)
+
+---
+
+## 23. vier Schutzbedarfskategorien
+
+1. **Kein Schutzbedarf**
+2. **Niedrig**
+3. **Mittel**
+4. **Hoch**
+
+---
+
+## 24. wesentliche Fragen bei IT-Sicherheitsproblemen
+
+1. **Was ist passiert?** (Scope & Art des Vorfalls)
+2. **Wer ist betroffen?** (Systeme, Daten, Nutzer)
+3. **Wie erfolgte der Angriff?** (Angriffsvektor)
+4. **Welche Auswirkungen?** (Vertraulichkeit, Integrität, Verfügbarkeit)
+5. **Welche Gegenmassnahmen?** (Containment, Eradication, Recovery)
+6. **Wer muss informiert werden?** (Meldepflichten, Stakeholder)
+
+---
+
+## 25. Behandlung von Vorfällen mit geringem Schadenspotenzial
+
+- **Standardisierte Workflows** (Ticketing-System)
+- **Automatisierte Reaktionen** (z. B. automatischer Neustart, Patch-Deployment)
+- **Delegation an 2nd-Level-Support**
+- **Dokumentation und Monitoring**
+
+---
+
+## 26. fünf Bereiche für Sicherheitsmassnahmen
+
+1. **Netzwerksicherheit** (Firewalls, Segmentierung)
+2. **Endpoint-Security** (Antivirus, Härtung)
+3. **Identitäts- und Zugriffsmanagement** (IAM, MFA)
+4. **Datensicherheit** (Verschlüsselung, Backup)
+5. **Applikationssicherheit** (Code-Reviews, WAF)
+6. **Physische Sicherheit** (Zutrittskontrolle)
+
+---
+
+## 27. Kennzahl für jährlich erwarteten Schaden
+
+- **Annual Loss Expectancy (ALE)**
+- **Berechnung:** ALE = Single Loss Expectancy (SLE) x Annual Rate of Occurrence (ARO)
+
+---
+
+## 28. Formel zur Schätzung des potenziellen Schadens
+
+- **Single Loss Expectancy (SLE):**
+  SLE = Asset Value (AV) x Exposure Factor (EF)
+- **Potential Loss:** P = SLE x ARO
+
+---
+
+## 29. Bedeutung ROSI
+
+- **Return on Security Investment**
+- Verhältnis von vermiedenen Schäden zu den Kosten der Sicherheitsmassnahmen
+
+---
+
+## 30. fünf Schritte der Strukturanalyse
+
+1. **Definition des Untersuchungsrahmens**
+2. **Inventarisierung von Assets**
+3. **Identifikation von Bedrohungen**
+4. **Analyse von Schwachstellen**
+5. **Bewertung von Risiken**
+
+---
+
+## 31. drei Bereiche der Grundschutzkataloge
+
+1. **Infrastruktur**
+2. **Netzwerke**
+3. **Anwendungen & Daten**
+
+## 32. vier Phasen zur Sicherstellung des Datenschutzes
+
+1. **Erheben von Anforderungen** (Datenklassifikation)
+2. **Implementierung technischer & organisatorischer Massnahmen**
+3. **Kontrolle & Audit**
+4. **Optimierung & Dokumentation**
+
+---
+
+## 33. vier Aufgaben zur Gewährleistung des Systembetriebs
+
+1. **Monitoring & Logging**
+2. **Patch- und Release-Management**
+3. **Backup & Recovery**
+4. **Kapazitäts- und Performance-Management**
+
+---
+
+## 39. fünf Ziele des «Härtens eines Systems»
+
+1. **Reduktion der Angriffsoberfläche**
+2. **Schliessen unnötiger Dienste**
+3. **Stärkung von Zugriffskontrollen**
+4. **Absicherung von Konfigurationen**
+5. **Minimierung von Schwachstellen**
+
+---
+
+## 40. Ein System gilt als sicher, wenn …
+
+1. … **nur autorisierte Nutzer** darauf zugreifen können.
+2. … **Datenintegrität** jederzeit gewährleistet ist.
+3. … **Verfügbarkeit** auch im Angriffsfall besteht.
+4. … **Vertraulichkeit** sensibler Informationen gewahrt bleibt.
+5. … **Änderungen protokolliert** und überprüfbar sind.
+
+---
+
+## 41. zwei Arten von Intrusion-Detection-Systemen
+
+1. **Network-based IDS (NIDS):** überwacht Netzwerkverkehr auf Anomalien.
+2. **Host-based IDS (HIDS):** überwacht System-Logs und Dateiänderungen auf Hosts.
+
+---
+
+## 42. typische Event-Daten eines Systems
+
+- **Zeitstempel**
+- **Quell- und Ziel-IP/-Port**
+- **User/Prozess-ID**
+- **Art des Events** (Login, Dateiänderung etc.)
+- **Ergebnis** (Erfolgreich/Fehlgeschlagen)
+- **Zusätzliche Metadaten** (z. B. Hashes)
+
+---
+
+## 43. Bedeutung regelmässiger Sicherheitskontrollen
+
+- Gewährleistung der **Wirksamkeit** von Massnahmen
+- **Früherkennung** neuer Schwachstellen
+- **Dokumentation** und Compliance-Nachweis
+- **Optimierung** und Anpassung an Veränderungen
+
+---
+
+## 44. Inhalte eines Testprotokolls
+
+- **Testprotokoll beinhaltet:**
+- Testziele und -umfang
+- Vorgehen und Methoden
+- Festgestellte Schwachstellen
+- Empfehlungen und Massnahmenplan
+- Unterschriften und Datum
+
+---
+
+## 45. Arten von Kontrollen
+
+- **Arten von Kontrollen:**
+- **Technische Kontrollen** (Firewalls, IDS)
+- **Organisatorische Kontrollen** (Richtlinien, Schulungen)
+- **Physische Kontrollen** (Zutrittskontrolle)
+- **Administrative Kontrollen** (Audits, Reviews)
+
+> nunno 6 wucha
+> ![](https://i.redd.it/e0y1s9fv0csd1.jpeg)
